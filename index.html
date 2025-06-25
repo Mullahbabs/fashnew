@@ -4,27 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fashub - Fashion Redefined</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="preloader">
-      <div class="preloader-spinner"></div>
-    </div>
     <header class="header">
       <div class="container">
         <div class="logo-toggle">
-          <a href="#" class="logo">FASHUB</a>
           <button class="theme-toggle" aria-label="Toggle dark mode">
-            <span class="toggle-icon">🦴</span>
+            <span class="toggle-icon">🌓</span>
           </button>
-          <button class="hamburger" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-          </button>
+          <a href="#" class="logo">FASHUB</a>
         </div>
+
         <nav class="nav">
           <ul class="nav-list">
             <li><a href="#" class="nav-link active">Collections</a></li>
@@ -33,24 +24,22 @@
             <li><a href="#" class="nav-link">Resellers</a></li>
             <li><a href="#" class="nav-link">Virtual Shows</a></li>
           </ul>
+
           <div class="nav-actions">
             <button class="search-btn" aria-label="Search">
-              <svg class="icon" viewBox="0 0 24 24">
+              <svg
+                class="search-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
                 <path
                   d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
-            <button class="wishlist-btn" aria-label="Wishlist">
-              <svg class="icon heart-icon" viewBox="0 0 24 24">
-                <path
-                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                />
-              </svg>
-              <span class="wishlist-count">0</span>
-            </button>
             <button class="cart-btn" aria-label="Cart">
-              <svg class="icon" viewBox="0 0 24 24">
+              <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24">
                 <path
                   d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
                 />
@@ -67,186 +56,59 @@
         <div class="container">
           <div class="hero-grid">
             <div class="carousel-container">
-              <div class="hero-carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="images/bg.png" alt="Spring Collection 2025" />
-                    <div class="carousel-caption">
-                      <h2>Spring Collection 2025</h2>
-                      <p>Discover the latest trends for the season</p>
-                      <button class="btn">Shop Now</button>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/bg2.jpg" alt="Summer Essentials" />
-                    <div class="carousel-caption">
-                      <h2>Summer Essentials</h2>
-                      <p>Lightweight fabrics for hot days</p>
-                      <button class="btn">Explore</button>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/bg3.jpg" alt="Designer Collaborations" />
-                    <div class="carousel-caption">
-                      <h2>Designer Collaborations</h2>
-                      <p>Exclusive pieces from top designers</p>
-                      <button class="btn">View Collection</button>
-                    </div>
+              <div class="carousel">
+                <div class="carousel-slide active">
+                  <img src="images/bg.png" alt="Fashion Collection 1" />
+                  <div class="carousel-caption">
+                    <h2>Spring Collection 2023</h2>
+                    <p>Discover the latest trends for the season</p>
+                    <a href="#" class="btn">Shop Now</a>
                   </div>
                 </div>
-                <button class="carousel-btn prev" aria-label="Previous slide">
+                <div class="carousel-slide">
+                  <img src="images/bg2.jpg" alt="Fashion Collection 2" />
+                  <div class="carousel-caption">
+                    <h2>Summer Essentials</h2>
+                    <p>Lightweight fabrics for hot days</p>
+                    <a href="#" class="btn">Explore</a>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/bg3.jpg" alt="Fashion Collection 3" />
+                  <div class="carousel-caption">
+                    <h2>Designer Collaborations</h2>
+                    <p>Exclusive pieces from top designers</p>
+                    <a href="#" class="btn">View Collection</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-controls">
+                <button class="carousel-prev" aria-label="Previous slide">
                   ❮
                 </button>
-                <button class="carousel-btn next" aria-label="Next slide">
-                  ❯
-                </button>
                 <div class="carousel-indicators"></div>
+                <button class="carousel-next" aria-label="Next slide">❯</button>
               </div>
             </div>
+
             <div class="ad-cards">
-              <div class="ad-card">
-                <img src="images/c1.jpg" alt="Local Designers" />
+              <div class="ad-card ad-card-1">
+                <img src="images/c1.jpg" alt="Special Offer" />
                 <div class="ad-content">
                   <h3>Local Designers</h3>
                   <p>Connect with tailors in your area</p>
-                  <button class="btn btn-outline">Find Tailors</button>
+                  <a href="#" class="btn btn-outline">Find Tailors</a>
                 </div>
               </div>
-              <div class="ad-card">
-                <img src="images/c2.jpg" alt="Custom Designs" />
+              <div class="ad-card ad-card-2">
+                <img src="images/c2.jpg" alt="New Arrivals" />
                 <div class="ad-content">
                   <h3>Custom Designs</h3>
                   <p>Create your perfect outfit</p>
-                  <a href="design.html" class="btn btn-outline">Design Now</a>
+                  <a href="#" class="btn btn-outline">Design Now</a>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="resellers">
-        <div class="container">
-          <h2 class="section-title">Meet Our Resellers</h2>
-          <div class="reseller-carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item">
-                <div class="reseller-card">
-                  <img src="images/Styling_Tips.png" alt="Trendy Boutique" />
-                  <div class="reseller-content">
-                    <h3>Trendy Boutique</h3>
-                    <p>
-                      Curated fashion from top designers, offering unique styles
-                      for every season.
-                    </p>
-                    <button class="like-btn" aria-label="Like Trendy Boutique">
-                      <svg class="icon heart-icon" viewBox="0 0 24 24">
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="reseller-card">
-                  <img src="images/weeklydeal.jpg" alt="Urban Threads" />
-                  <div class="reseller-content">
-                    <h3>Urban Threads</h3>
-                    <p>
-                      Streetwear with a modern twist, perfect for bold fashion
-                      statements.
-                    </p>
-                    <button class="like-btn" aria-label="Like Urban Threads">
-                      <svg class="icon heart-icon" viewBox="0 0 24 24">
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="reseller-card">
-                  <img src="images/weeklydeal2.jpg" alt="Elegance Hub" />
-                  <div class="reseller-content">
-                    <h3>Elegance Hub</h3>
-                    <p>
-                      Timeless pieces for every occasion, crafted with
-                      sophistication.
-                    </p>
-                    <button class="like-btn" aria-label="Like Elegance Hub">
-                      <svg class="icon heart-icon" viewBox="0 0 24 24">
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="reseller-card">
-                  <img src="images/Styling_Tips.png" alt="Vogue Vault" />
-                  <div class="reseller-content">
-                    <h3>Vogue Vault</h3>
-                    <p>
-                      Exclusive collections at great prices, for the
-                      fashion-forward.
-                    </p>
-                    <button class="like-btn" aria-label="Like Vogue Vault">
-                      <svg class="icon heart-icon" viewBox="0 0 24 24">
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="reseller-card">
-                  <img src="images/weeklydeal.jpg" alt="Chic Corner" />
-                  <div class="reseller-content">
-                    <h3>Chic Corner</h3>
-                    <p>
-                      Trendy outfits for the modern wardrobe, with a focus on
-                      quality.
-                    </p>
-                    <button class="like-btn" aria-label="Like Chic Corner">
-                      <svg class="icon heart-icon" viewBox="0 0 24 24">
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="reseller-card">
-                  <img src="images/weeklydeal2.jpg" alt="Style Haven" />
-                  <div class="reseller-content">
-                    <h3>Style Haven</h3>
-                    <p>Vibrant designs to elevate your everyday look.</p>
-                    <button class="like-btn" aria-label="Like Style Haven">
-                      <svg class="icon heart-icon" viewBox="0 0 24 24">
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-btn prev" aria-label="Previous slide">
-              ❮
-            </button>
-            <button class="carousel-btn next" aria-label="Next slide">❯</button>
-            <div class="carousel-indicators"></div>
           </div>
         </div>
       </section>
