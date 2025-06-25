@@ -125,3 +125,94 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Product Carousel functionality
+  const productCarousel = document.querySelector(".product-carousel");
+  const productCards = document.querySelectorAll(".product-card");
+  const productPrevBtn = document.querySelector(".product-carousel-prev");
+  const productNextBtn = document.querySelector(".product-carousel-next");
+  const productIndicatorsContainer = document.querySelector(
+    ".product-carousel-indicators"
+  );
+
+  let productCurrentSlide = 0;
+  const cardCount = productCards.length;
+  const cardsPerView = 3;
+
+  // Create indicators
+  for (let i = 0; i < Math.ceil(cardCount / cardsPerView); i++) {
+    const indicator = document.createElement("span");
+    indicator.addEventListener("click", () => goToProductSlide(i));
+    productIndicatorsContainer.appendChild(indicator);
+  }
+
+  const productIndicators = document.querySelectorAll(
+    ".product-carousel-indicators span"
+  );
+
+  function updateProductCarousel() {
+    const offset = -productCurrentSlide * (100 / cardsPerView);
+    productCarousel.style.transform = `translateX(${offset}%)`;
+
+    productIndicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === productCurrentSlide);
+    });
+  }
+
+  function goToProductSlide(slideIndex) {
+    productCurrentSlide = slideIndex % Math.ceil(cardCount / cardsPerView);
+    updateProductCarousel();
+  }
+
+  function nextProductSlide() {
+    productCurrentSlide =
+      (productCurrentSlide + 1) % Math.ceil(cardCount / cardsPerView);
+    updateProductCarousel();
+  }
+
+  function prevProductSlide() {
+    productCurrentSlide =
+      (productCurrentSlide - 1 + Math.ceil(cardCount / cardsPerView)) %
+      Math.ceil(cardCount / cardsPerView);
+    updateProductCarousel();
+  }
+
+  productPrevBtn.addEventListener("click", prevProductSlide);
+  productNextBtn.addEventListener("click", nextProductSlide);
+
+  // Auto-advance product carousel
+  let productCarouselInterval = setInterval(nextProductSlide, 5000);
+
+  // Pause on hover
+  productCarousel.addEventListener("mouseenter", () => {
+    clearInterval(productCarouselInterval);
+  });
+
+  productCarousel.addEventListener("mouseleave", () => {
+    productCarouselInterval = setInterval(nextProductSlide, 5000);
+  });
+
+  // Wishlist functionality
+  let wishlistCount = 0;
+  const wishlistCountElements = document.querySelectorAll(".wishlist-count");
+
+  document.querySelectorAll(".wishlist-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const isActive = this.classList.contains("active");
+      if (!isActive) {
+        wishlistCount++;
+        this.classList.add("active");
+        const countElement = this.querySelector(".wishlist-count");
+        countElement.textContent = wishlistCount;
+        countElement.classList.add("pulse");
+        setTimeout(() => {
+          countElement.classList.remove("pulse");
+        }, 300);
+      }
+    });
+  });
+
+  // Initialize
+  updateProductCarousel();
+});
