@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashub - Design Your Outfit</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo-toggle">
+                <a href="index.html" class="logo">FASHUB</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="toggle-icon">🦴</span>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Collections</a></li>
+                    <li><a href="#" class="nav-link">Designers</a></li>
+                    <li><a href="#" class="nav-link">Tailors</a></li>
+                    <li><a href="#" class="nav-link">Resellers</a></li>
+                    <li><a href="#" class="nav-link">Virtual Shows</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-btn" aria-label="Search">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27a6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                    <button class="wishlist-btn" aria-label="Wishlist">
+                        <svg class="icon heart-icon" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3c3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.34 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span class="wishlist-count">0</span>
+                    </button>
+                    <button class="cart-btn" aria-label="Cart">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="design">
+            <div class="container">
+                <h2 class="section-title">Design Your Outfit</h2>
+                <div class="design-grid">
+                    <!-- <div class="preview-area">
+                        <img src="https://via.placeholder.com/300x400" alt="Outfit Preview" class="preview-img">
+                    </div> -->
+                    <div class="design-form">
+                        <h3>Customize Your Look</h3>
+                        <form id="outfit-form">
+                            <div class="form-group">
+                                <label for="top">Top</label>
+                                <select id="top" required>
+                                    <option value="">Select Top</option>
+                                    <option value="tshirt">T-Shirt</option>
+                                    <option value="blouse">Blouse</option>
+                                    <option value="shirt">Shirt</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bottom">Bottom</label>
+                                <select id="bottom" required>
+                                    <option value="">Select Bottom</option>
+                                    <option value="jeans">Jeans</option>
+                                    <option value="skirt">Skirt</option>
+                                    <option value="trousers">Trousers</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="color">Color</label>
+                                <select id="color" required>
+                                    <option value="">Select Color</option>
+                                    <option value="black">Black</option>
+                                    <option value="white">White</option>
+                                    <option value="red">Red</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn" id="save-design">Save Design</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" id="design-modal">
+            <div class="modal-content">
+                <span class="modal-close">×</span>
+                <h3>Design Saved!</h3>
+                <p>Your custom outfit has been saved to your account.</p>
+                <button class="btn" id="modal-close-btn">Continue</button>
+            </div>
+        </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
