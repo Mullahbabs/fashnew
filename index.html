@@ -776,5 +776,21 @@
         });
       });
     </script>
+    <script>
+      // Pause ticker on hover
+      document
+        .querySelector(".ticker-container")
+        .addEventListener("mouseenter", () => {
+          document.querySelector(".ticker-track").style.animationPlayState =
+            "paused";
+        });
+
+      document
+        .querySelector(".ticker-container")
+        .addEventListener("mouseleave", () => {
+          document.querySelector(".ticker-track").style.animationPlayState =
+            "running";
+        });
+    </script>
   </body>
 </html>
