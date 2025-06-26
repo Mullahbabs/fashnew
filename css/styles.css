@@ -198,7 +198,7 @@ body {
 /* Hero Section */
 .hero {
   padding: 2rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
 }
 
 .hero-grid {
@@ -425,7 +425,7 @@ body {
 .section-title {
   font-size: 2.2rem;
   margin-bottom: 2rem;
-  color: var(--text);
+  color: var(--secondary);
   text-align: left;
   position: relative;
   padding-bottom: 0.5rem;
@@ -447,7 +447,7 @@ body {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   padding: 1rem;
 }
 
@@ -669,7 +669,7 @@ body {
 /* About Us Section Styles */
 .about-us-section {
   padding: 6rem 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   position: relative;
   overflow: hidden;
   align-content: justify;
@@ -791,8 +791,9 @@ body {
 }
 
 .about-text {
-  color: #555;
-  font-size: 1.1rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 300;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
@@ -817,7 +818,7 @@ body {
 
 .stat-label {
   font-size: 0.9rem;
-  color: #666;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -832,6 +833,7 @@ body {
 
 .signature {
   height: 60px;
+  border-radius: 8px;
 }
 
 .ceo-info {
@@ -841,12 +843,12 @@ body {
 
 .ceo-name {
   font-weight: 600;
-  color: #222;
+  color: var(--primary);
 }
 
 .ceo-title {
   font-size: 0.9rem;
-  color: #777;
+  color: #fff;
 }
 
 /* CTA Button */
