@@ -69,11 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   let productCurrentSlide = 0;
-  const cardCount = productCards.length;
+  const cardCount = productCards.length; // 6 cards
   const cardsPerView = 3;
+  const totalSlides = 4; // Explicitly set to 4 slides
 
-  // Create indicators
-  for (let i = 0; i < Math.ceil(cardCount / cardsPerView); i++) {
+  // Create indicators for each slide
+  for (let i = 0; i < totalSlides; i++) {
     const indicator = document.createElement("span");
     indicator.addEventListener("click", () => goToProductSlide(i));
     productIndicatorsContainer.appendChild(indicator);
@@ -84,29 +85,36 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   function updateProductCarousel() {
+    // Calculate the translateX offset based on the current slide
     const offset = -productCurrentSlide * (100 / cardsPerView);
     productCarousel.style.transform = `translateX(${offset}%)`;
 
+    // Update indicators
     productIndicators.forEach((indicator, index) => {
       indicator.classList.toggle("active", index === productCurrentSlide);
     });
   }
 
   function goToProductSlide(slideIndex) {
-    productCurrentSlide = slideIndex % Math.ceil(cardCount / cardsPerView);
+    // Ensure slideIndex stays within bounds (0 to totalSlides - 1)
+    productCurrentSlide = slideIndex;
+    if (productCurrentSlide >= totalSlides) {
+      productCurrentSlide = 0; // Reset to first slide after last
+    } else if (productCurrentSlide < 0) {
+      productCurrentSlide = totalSlides - 1; // Go to last slide if negative
+    }
     updateProductCarousel();
   }
 
   function nextProductSlide() {
-    productCurrentSlide =
-      (productCurrentSlide + 1) % Math.ceil(cardCount / cardsPerView);
+    // Move to next slide, reset to 0 if at the end
+    productCurrentSlide = (productCurrentSlide + 1) % totalSlides;
     updateProductCarousel();
   }
 
   function prevProductSlide() {
-    productCurrentSlide =
-      (productCurrentSlide - 1 + Math.ceil(cardCount / cardsPerView)) %
-      Math.ceil(cardCount / cardsPerView);
+    // Move to previous slide, loop to last slide if at the start
+    productCurrentSlide = (productCurrentSlide - 1 + totalSlides) % totalSlides;
     updateProductCarousel();
   }
 
