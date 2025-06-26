@@ -10,19 +10,20 @@
     <header class="header">
       <div class="container">
         <div class="logo-toggle">
+          <a href="#" class="logo">FASHUB</a>
           <button class="theme-toggle" aria-label="Toggle dark mode">
             <span class="toggle-icon">🌓</span>
           </button>
-          <a href="#" class="logo">FASHUB</a>
         </div>
 
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="#" class="nav-link active">Collections</a></li>
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="#" class="nav-link">Collections</a></li>
             <li><a href="#" class="nav-link">Designers</a></li>
-            <li><a href="#" class="nav-link">Tailors</a></li>
-            <li><a href="#" class="nav-link">Resellers</a></li>
+            <li><a href="#" class="nav-link">Open Market</a></li>
             <li><a href="#" class="nav-link">Virtual Shows</a></li>
+            <li><a href="#" class="nav-link">Contact Us</a></li>
           </ul>
 
           <div class="nav-actions">
@@ -73,7 +74,7 @@
                 <div class="carousel-slide active">
                   <img src="images/bg.png" alt="Fashion Collection 1" />
                   <div class="carousel-caption">
-                    <h2>Spring Collection 2023</h2>
+                    <h2>Spring Collection 2025</h2>
                     <p>Discover the latest trends for the season</p>
                     <a href="#" class="btn">Shop Now</a>
                   </div>
@@ -127,6 +128,68 @@
       </section>
     </main>
 
+    <section class="about-us-section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div
+          class="about-us-grid"
+          style="text-align: justify; align-items: justify"
+        >
+          <!-- Image Container with overlapping images -->
+          <div class="image-container">
+            <div class="main-image">
+              <img src="images/about-us.jpg" alt="Our Team Working" />
+            </div>
+            <div class="overlay-image">
+              <img src="images/ab2.jpg" alt="Team Meeting" />
+            </div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="content-container">
+            <span class="section-subtitle">Who We Are</span>
+            <h5 class="section-title">Fashion Excellence Since 2018</h5>
+            <p class="about-text">
+              Fashub is a dynamic fashion platform connecting designers,
+              tailors, resellers, and style enthusiasts in one vibrant
+              community. We empower local creators to showcase their collections
+              while offering users a seamless way to discover, customize, and
+              purchase unique fashion pieces.
+            </p>
+
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-number" data-count="150">0</div>
+                <div class="stat-label">Purchases Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="98">0</div>
+                <div class="stat-label">Satisfied Clients</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="55">0</div>
+                <div class="stat-label">Top Designers</div>
+              </div>
+            </div>
+
+            <div class="signature-container">
+              <img
+                src="images/signature.jpg"
+                alt="CEO Signature"
+                class="signature"
+              />
+              <div class="ceo-info">
+                <div class="ceo-name">Janto Fubu</div>
+                <div class="ceo-title">Founder & CEO</div>
+              </div>
+            </div>
+
+            <button class="cta-button">Get In Touch</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="product-carousel-section">
       <div class="container">
         <h2 class="section-title">Featured Products</h2>
@@ -154,12 +217,16 @@
               </div>
               <div class="product-info">
                 <h3>Modern Jacket</h3>
-                <p>$89.99</p>
+                <div class="product-rating">
+                  <div class="star-rating">★★★★☆</div>
+                  <span class="rating-count">(42)</span>
+                </div>
+                <p>$59.99</p>
               </div>
             </div>
             <div class="product-card">
               <div class="product-image">
-                <img src="images/weeklydeal.jpg" alt="Product 2" />
+                <img src="images/weeklydeal3.jpg" alt="Product 2" />
                 <div class="product-actions">
                   <button class="wishlist-btn" aria-label="Add to Wishlist">
                     <svg
@@ -179,12 +246,16 @@
               </div>
               <div class="product-info">
                 <h3>Classic Sneakers</h3>
+                <div class="product-rating">
+                  <div class="star-rating">★★★★☆</div>
+                  <span class="rating-count">(42)</span>
+                </div>
                 <p>$59.99</p>
               </div>
             </div>
             <div class="product-card">
               <div class="product-image">
-                <img src="images/weeklydeal2.jpg" alt="Product 3" />
+                <img src="images/weeklydeal3.jpg" alt="Product 3" />
                 <div class="product-actions">
                   <button class="wishlist-btn" aria-label="Add to Wishlist">
                     <svg
@@ -204,7 +275,11 @@
               </div>
               <div class="product-info">
                 <h3>Elegant Dress</h3>
-                <p>$129.99</p>
+                <div class="product-rating">
+                  <div class="star-rating">★★★★☆</div>
+                  <span class="rating-count">(42)</span>
+                </div>
+                <p>$59.99</p>
               </div>
             </div>
             <div class="product-card">
@@ -229,7 +304,11 @@
               </div>
               <div class="product-info">
                 <h3>Leather Bag</h3>
-                <p>$79.99</p>
+                <div class="product-rating">
+                  <div class="star-rating">★★★★☆</div>
+                  <span class="rating-count">(42)</span>
+                </div>
+                <p>$59.99</p>
               </div>
             </div>
             <div class="product-card">
@@ -254,7 +333,11 @@
               </div>
               <div class="product-info">
                 <h3>Denim Jeans</h3>
-                <p>$69.99</p>
+                <div class="product-rating">
+                  <div class="star-rating">★★★★☆</div>
+                  <span class="rating-count">(42)</span>
+                </div>
+                <p>$59.99</p>
               </div>
             </div>
             <div class="product-card">
@@ -279,7 +362,11 @@
               </div>
               <div class="product-info">
                 <h3>Stylish Sunglasses</h3>
-                <p>$49.99</p>
+                <div class="product-rating">
+                  <div class="star-rating">★★★★☆</div>
+                  <span class="rating-count">(42)</span>
+                </div>
+                <p>$59.99</p>
               </div>
             </div>
           </div>

@@ -216,3 +216,59 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize
   updateProductCarousel();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Animate statistics counting
+  function animateStats() {
+    const statNumbers = document.querySelectorAll(".stat-number");
+    const speed = 200; // The lower the faster
+    const startCountingWhen = 100; // Start counting when element is 100px from bottom of viewport
+
+    statNumbers.forEach((stat) => {
+      const target = parseInt(stat.getAttribute("data-count"));
+      const count = parseInt(stat.innerText);
+      const increment = Math.ceil(target / speed);
+
+      // Only animate if element is in view
+      const statObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const updateCount = () => {
+                const currentCount = parseInt(stat.innerText);
+                if (currentCount < target) {
+                  stat.innerText = Math.min(currentCount + increment, target);
+                  setTimeout(updateCount, 1);
+                }
+              };
+              updateCount();
+              statObserver.unobserve(stat); // Stop observing once animated
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+          rootMargin: `0px 0px -${startCountingWhen}px 0px`,
+        }
+      );
+
+      statObserver.observe(stat);
+    });
+  }
+
+  // Initialize the animation
+  animateStats();
+
+  // Optional: Re-animate when scrolling back up (for single-page apps)
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition < 100) {
+      // Reset counts to 0 when scrolled to top
+      document.querySelectorAll(".stat-number").forEach((stat) => {
+        stat.innerText = "0";
+      });
+      // Re-run animation
+      animateStats();
+    }
+  });
+});
