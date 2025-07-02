@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fashub - Design Your Outfit</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader-spinner"></div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <div class="logo-toggle">
+          <a href="index.html" class="logo">FASHUB</a>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-icon">🦴</span>
+          </button>
+          <button class="hamburger" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Collections</a></li>
+            <li><a href="#" class="nav-link">Designers</a></li>
+            <li><a href="#" class="nav-link">Tailors</a></li>
+            <li><a href="#" class="nav-link">Resellers</a></li>
+            <li><a href="#" class="nav-link">Virtual Shows</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button class="search-btn" aria-label="Search">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  d="M15.5 14h-.79l-.28-.27a6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </button>
+            <button class="wishlist-btn" aria-label="Wishlist">
+              <svg class="icon heart-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3c3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.34 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+              <span class="wishlist-count">0</span>
+            </button>
+            <button class="cart-btn" aria-label="Cart">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Collections Hero Banner -->
+    <section
+      class="collections-hero"
+      style="background-image: url(/images/singlebg.jpg)"
+    >
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Curated Collections</h1>
+        <p class="hero-subtitle">
+          Discover unique pieces from emerging designers and established fashion
+          houses
+        </p>
+      </div>
+    </section>
+
+    <!-- Gender Filter -->
+    <div class="collection-filters">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="women">Women</button>
+        <button class="filter-btn" data-filter="men">Men</button>
+        <button class="filter-btn" data-filter="unisex">Unisex</button>
+      </div>
+    </div>
+
+    <!-- Collections Grid -->
+    <div class="collections-container">
+      <!-- Collection 1 -->
+      <div class="collection-block" data-gender="women">
+        <div
+          class="collection-bg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div class="collection-overlay">
+          <h3 class="collection-title">Urban Elegance</h3>
+          <div class="collection-meta">
+            <span>24 Items</span>
+            <span>Spring 2023</span>
+            <span class="collection-category">Premium</span>
+          </div>
+        </div>
+        <a href="#" class="designer-badge">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Designer"
+            class="designer-logo"
+          />
+          <span class="designer-name">Maria Chen</span>
+        </a>
+        <button class="view-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Collection 2 -->
+      <div class="collection-block" data-gender="men">
+        <div
+          class="collection-bg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div class="collection-overlay">
+          <h3 class="collection-title">Streetwear Essentials</h3>
+          <div class="collection-meta">
+            <span>18 Items</span>
+            <span>Limited Edition</span>
+          </div>
+        </div>
+        <a href="#" class="designer-badge">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Designer"
+            class="designer-logo"
+          />
+          <span class="designer-name">James Okafor</span>
+        </a>
+        <button class="view-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Collection 3 -->
+      <div class="collection-block" data-gender="unisex">
+        <div
+          class="collection-bg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div class="collection-overlay">
+          <h3 class="collection-title">Minimalist Future</h3>
+          <div class="collection-meta">
+            <span>12 Items</span>
+            <span>Capsule Collection</span>
+          </div>
+        </div>
+        <a href="#" class="designer-badge">
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            alt="Designer"
+            class="designer-logo"
+          />
+          <span class="designer-name">Sofia Rodriguez</span>
+        </a>
+        <button class="view-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Collection 4 -->
+      <div class="collection-block" data-gender="women">
+        <div
+          class="collection-bg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div class="collection-overlay">
+          <h3 class="collection-title">Bridal Couture</h3>
+          <div class="collection-meta">
+            <span>8 Items</span>
+            <span>Handcrafted</span>
+          </div>
+        </div>
+        <a href="#" class="designer-badge">
+          <img
+            src="https://randomuser.me/api/portraits/women/65.jpg"
+            alt="Designer"
+            class="designer-logo"
+          />
+          <span class="designer-name">Elena Petrov</span>
+        </a>
+        <button class="view-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Collection 5 -->
+      <div class="collection-block large" data-gender="men">
+        <div
+          class="collection-bg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div class="collection-overlay">
+          <h3 class="collection-title">African Heritage</h3>
+          <div class="collection-meta">
+            <span>16 Items</span>
+            <span>Cultural Collection</span>
+          </div>
+        </div>
+        <a href="#" class="designer-badge">
+          <img
+            src="https://randomuser.me/api/portraits/men/75.jpg"
+            alt="Designer"
+            class="designer-logo"
+          />
+          <span class="designer-name">Kwame Asante</span>
+        </a>
+        <button class="view-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Collection 6 -->
+      <div class="collection-block" data-gender="unisex">
+        <div
+          class="collection-bg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div class="collection-overlay">
+          <h3 class="collection-title">Sustainable Future</h3>
+          <div class="collection-meta">
+            <span>14 Items</span>
+            <span>Eco-Friendly</span>
+          </div>
+        </div>
+        <a href="#" class="designer-badge">
+          <img
+            src="https://randomuser.me/api/portraits/women/33.jpg"
+            alt="Designer"
+            class="designer-logo"
+          />
+          <span class="designer-name">Lena Müller</span>
+        </a>
+        <button class="view-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <footer class="vibrant-footer">
+      <div class="footer-wave"></div>
+
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+            <ul class="footer-links">
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Trending Styles</a></li>
+              <li><a href="#">Designer Collections</a></li>
+              <li><a href="#">Seasonal Lookbooks</a></li>
+              <li><a href="#">Limited Editions</a></li>
+            </ul>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-column">
+            <h3 class="footer-title">Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div class="footer-column">
+            <h3 class="footer-title">Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-column newsletter-column">
+            <h3 class="footer-title">Stay Connected</h3>
+            <p class="newsletter-text">
+              Subscribe for exclusive offers, styling tips, and early access to
+              new collections.
+            </p>
+
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+
+            <div class="social-links">
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Pinterest"
+                ><i class="fab fa-pinterest-p"></i
+              ></a>
+              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="payment-methods">
+            <img src="https://via.placeholder.com/40x25?text=Visa" alt="Visa" />
+            <img
+              src="https://via.placeholder.com/40x25?text=MC"
+              alt="Mastercard"
+            />
+            <img
+              src="https://via.placeholder.com/40x25?text=PayPal"
+              alt="PayPal"
+            />
+            <img
+              src="https://via.placeholder.com/40x25?text=ApplePay"
+              alt="Apple Pay"
+            />
+          </div>
+
+          <div class="copyright">
+            <p>&copy; 2025 Fashub.com All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Settings</a>
+            </div>
+          </div>
+
+          <div class="tech-credit">
+            <p>Powered by <span class="bellatech">BellaTECH NG</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/cart-wishlist.js"></script>
+    <script src="js/modal.js"></script>
+
+    <script>
+      // Pause ticker on hover
+      document
+        .querySelector(".ticker-container")
+        .addEventListener("mouseenter", () => {
+          document.querySelector(".ticker-track").style.animationPlayState =
+            "paused";
+        });
+
+      document
+        .querySelector(".ticker-container")
+        .addEventListener("mouseleave", () => {
+          document.querySelector(".ticker-track").style.animationPlayState =
+            "running";
+        });
+    </script>
+
+    <script>
+      // Filter Functionality
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Update active button
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+
+          // Filter collections
+          const filter = this.dataset.filter;
+          document
+            .querySelectorAll(".collection-block")
+            .forEach((collection) => {
+              if (filter === "all" || collection.dataset.gender === filter) {
+                collection.style.display = "block";
+              } else {
+                collection.style.display = "none";
+              }
+            });
+        });
+      });
+
+      // View Button Animation
+      document.querySelectorAll(".collection-block").forEach((block) => {
+        block.addEventListener("mouseenter", () => {
+          block.querySelector(".view-btn").style.opacity = "1";
+          block.querySelector(".view-btn").style.transform = "translateY(0)";
+        });
+
+        block.addEventListener("mouseleave", () => {
+          block.querySelector(".view-btn").style.opacity = "0";
+          block.querySelector(".view-btn").style.transform = "translateY(10px)";
+        });
+
+        // Click handler for view button
+        block.querySelector(".view-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          // Here you would normally navigate to the collection page
+          alert(
+            `Viewing ${block.querySelector(".collection-title").textContent}`
+          );
+        });
+      });
+
+      // Designer badge click handler
+      document.querySelectorAll(".designer-badge").forEach((badge) => {
+        badge.addEventListener("click", function (e) {
+          e.stopPropagation();
+          // Here you would navigate to the designer profile
+          alert(
+            `Viewing ${
+              this.querySelector(".designer-name").textContent
+            }'s profile`
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

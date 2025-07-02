@@ -5,12 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fashub - Fashion Redefined</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <style id="page-transition-styles">
+      /* Transition styles */
+      .page-transition {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        z-index: 9999;
+        transform: translateY(100%);
+        pointer-events: none;
+      }
+
+      .transition-content {
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+      }
+
+      .transition-active .transition-content {
+        opacity: 1;
+      }
+    </style>
+
+    <div class="page-transition"></div>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="logo-toggle">
-          <a href="#" class="logo">FASHUB NG</a>
+          <a href="collections.html" class="logo">FASHUB NG</a>
           <button class="theme-toggle" aria-label="Toggle dark mode">
             <span class="toggle-icon">🌓</span>
           </button>
@@ -19,7 +44,7 @@
         <nav class="nav">
           <ul class="nav-list">
             <li><a href="#" class="nav-link active">Home</a></li>
-            <li><a href="#" class="nav-link">Collections</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
             <li><a href="#" class="nav-link">Designers</a></li>
             <li><a href="#" class="nav-link">Open Market</a></li>
             <li><a href="#" class="nav-link">Virtual Shows</a></li>
@@ -93,7 +118,7 @@
                   <div class="carousel-caption">
                     <h2>Spring Collection 2025</h2>
                     <p>Discover the latest trends for the season</p>
-                    <a href="#" class="btn">Shop Now</a>
+                    <a href="collections.html" class="btn">Shop Now</a>
                   </div>
                 </div>
                 <div class="carousel-slide">
@@ -606,6 +631,74 @@
       </div>
     </section>
 
+    <section class="faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I purchase items from designers on Fashub?
+        </div>
+        <div class="faq-answer">
+          <p>
+            Browse designer collections, select your desired items, and click
+            "Add to Cart". Proceed to checkout where you'll enter shipping
+            details. Note: Payment processing requires our upcoming app version
+            (coming soon!).
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I really connect with local tailors through Fashub?
+        </div>
+        <div class="faq-answer">
+          <p>
+            Absolutely! Our Tailor Connect feature shows verified local tailors
+            in your area. View their portfolios, request quotes, and schedule
+            fittings directly through the platform.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How does the virtual fashion show work?</div>
+        <div class="faq-answer">
+          <p>
+            Designers can upload 360° views of their collections. Users "attend"
+            scheduled shows in real-time or watch recordings, with options to
+            click on showcased items for immediate purchase.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Is there a fee to sell my designs as a reseller?
+        </div>
+        <div class="faq-answer">
+          <p>
+            Fashub takes a minimal 5% commission only after a successful sale.
+            No upfront costs - you simply create a profile, upload items with
+            photos/descriptions, and set your prices.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I customize and order my own designs?
+        </div>
+        <div class="faq-answer">
+          <p>
+            Use our Design Studio tool to mix fabrics, patterns, and
+            silhouettes. When satisfied, submit your design. We'll match you
+            with a tailor or manufacturer and provide a quote within 48 hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="vibrant-footer">
       <div class="footer-wave"></div>
 
@@ -791,6 +884,76 @@
           document.querySelector(".ticker-track").style.animationPlayState =
             "running";
         });
+    </script>
+    <script>
+      // Page Transition Controller
+      class PageTransitions {
+        constructor() {
+          this.transitionEl = document.querySelector(".page-transition");
+          this.links = document.querySelectorAll(
+            'a:not([target="_blank"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])'
+          );
+          this.init();
+        }
+
+        init() {
+          // Add transition class to body on load
+          document.body.classList.add("transition-active");
+
+          // Set up link handlers
+          this.links.forEach((link) => {
+            if (link.href.includes(window.location.origin)) {
+              link.addEventListener("click", this.handleLinkClick.bind(this));
+            }
+          });
+        }
+
+        handleLinkClick(e) {
+          if (this.shouldTransition(e)) {
+            e.preventDefault();
+            this.animateOut(e.target.href);
+          }
+        }
+
+        shouldTransition(e) {
+          const link = e.currentTarget;
+          return (
+            !link.target &&
+            !link.hasAttribute("download") &&
+            link.href &&
+            link.href.includes(window.location.origin) &&
+            link.href !== window.location.href
+          );
+        }
+
+        animateOut(href) {
+          // Start transition
+          this.transitionEl.style.transform = "translateY(0)";
+          this.transitionEl.style.transition =
+            "transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)";
+
+          // Wait for animation to complete
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+
+        animateIn() {
+          this.transitionEl.style.transform = "translateY(100%)";
+          this.transitionEl.style.transition =
+            "transform 0.5s cubic-bezier(0.65, 0, 0.35, 1) 0.1s";
+        }
+      }
+
+      // Initialize when DOM loads
+      document.addEventListener("DOMContentLoaded", () => {
+        const transitions = new PageTransitions();
+
+        // Animate in on page load
+        window.addEventListener("load", () => {
+          transitions.animateIn();
+        });
+      });
     </script>
   </body>
 </html>
