@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentCollectionIndex = 0;
   let collectionsData = [];
 
-  // Sample collections data (replace with your actual data)
   function initializeCollections() {
     collectionsData = [
       {
@@ -870,8 +869,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize collections and bind open triggers
   initializeCollections();
 
-  // Example: Bind this to your collection blocks
-  document.querySelectorAll(".collection-block").forEach((block, index) => {
+  // Bind to collection blocks
+  document.querySelectorAll(".view-btn").forEach((block, index) => {
     block.addEventListener("click", () => {
       openCollectionModal(index);
     });

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fashub - Fashion Redefined</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style id="page-transition-styles">
+      /* Transition styles */
+      .page-transition {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        z-index: 9999;
+        transform: translateY(100%);
+        pointer-events: none;
+      }
+
+      .transition-content {
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+      }
+
+      .transition-active .transition-content {
+        opacity: 1;
+      }
+    </style>
+
+    <div class="page-transition"></div>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo-toggle">
+          <a href="collections.html" class="logo">FASHUB NG</a>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-icon">🌓</span>
+          </button>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="p1.html" class="nav-link">Designers</a></li>
+            <li><a href="#" class="nav-link">Open Market</a></li>
+            <li><a href="#" class="nav-link">Virtual Shows</a></li>
+            <li><a href="#" class="nav-link">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="search-btn" aria-label="Search">
+              <svg
+                class="search-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </button>
+            <button class="wishlist-btn" aria-label="Wishlist">
+              <svg
+                class="heart-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+              <span class="wishlist-count">0</span>
+            </button>
+            <button class="cart-btn" aria-label="Cart">
+              <svg class="cart-icon" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="ticker-container">
+        <div class="ticker-track">
+          <div class="ticker-item">
+            ✨ New Arrivals | Summer Collection Live Now ✨
+          </div>
+          <div class="ticker-item">
+            🔥 20% Off All Dresses - Limited Time Offer 🔥
+          </div>
+          <div class="ticker-item">⭐ Celebrity Stylist Picks This Week ⭐</div>
+          <div class="ticker-item">
+            🚀 Free Express Shipping on Orders Over N100,000 🚀
+          </div>
+          <div class="ticker-item">
+            🎉 Follow @FashHub for Daily Style Inspiration 🎉
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="designers-page">
+      <!-- Hero Section -->
+      <section class="designers-hero">
+        <div class="container">
+          <h1>Meet Our Designers</h1>
+          <p class="subtitle">
+            Discover the creative minds shaping the future of fashion
+          </p>
+          <div class="search-filter">
+            <input
+              type="text"
+              placeholder="Search designers..."
+              class="search-input"
+            />
+            <select class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="sustainable">Sustainable</option>
+              <option value="luxury">Luxury</option>
+              <option value="streetwear">Streetwear</option>
+              <option value="bridal">Bridal</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Designers Grid -->
+      <section class="designers-grid-section">
+        <div class="container">
+          <div class="designers-grid" id="designersGrid">
+            <!-- Designer cards will be injected here by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Designer Modal -->
+    <div class="designer-modal" id="designerModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-container">
+        <!-- Modal content will be injected here by JavaScript -->
+      </div>
+    </div>
+
+    <footer class="vibrant-footer">
+      <div class="footer-wave"></div>
+
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+            <ul class="footer-links">
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Trending Styles</a></li>
+              <li><a href="#">Designer Collections</a></li>
+              <li><a href="#">Seasonal Lookbooks</a></li>
+              <li><a href="#">Limited Editions</a></li>
+            </ul>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-column">
+            <h3 class="footer-title">Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div class="footer-column">
+            <h3 class="footer-title">Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-column newsletter-column">
+            <h3 class="footer-title">Stay Connected</h3>
+            <p class="newsletter-text">
+              Subscribe for exclusive offers, styling tips, and early access to
+              new collections.
+            </p>
+
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+
+            <div class="social-links">
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Pinterest"
+                ><i class="fab fa-pinterest-p"></i
+              ></a>
+              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="payment-methods">
+            <img src="https://via.placeholder.com/40x25?text=Visa" alt="Visa" />
+            <img
+              src="https://via.placeholder.com/40x25?text=MC"
+              alt="Mastercard"
+            />
+            <img
+              src="https://via.placeholder.com/40x25?text=PayPal"
+              alt="PayPal"
+            />
+            <img
+              src="https://via.placeholder.com/40x25?text=ApplePay"
+              alt="Apple Pay"
+            />
+          </div>
+
+          <div class="copyright">
+            <p>&copy; 2025 Fashub.com All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Settings</a>
+            </div>
+          </div>
+
+          <div class="tech-credit">
+            <p>Powered by <span class="bellatech">BellaTECH NG</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/cart-wishlist.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/profile.js"></script>
+
+    <script>
+      // Initialize when DOM loads
+      document.addEventListener("DOMContentLoaded", () => {
+        const transitions = new PageTransitions();
+
+        // Animate in on page load
+        window.addEventListener("load", () => {
+          transitions.animateIn();
+        });
+      });
+    </script>
+  </body>
+</html>

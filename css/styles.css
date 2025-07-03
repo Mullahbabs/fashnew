@@ -557,6 +557,8 @@ body.transition-out {
   width: 100%;
   height: 100%;
   background-size: cover;
+  justify-items: center;
+  align-items: center;
   background-position: center;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -622,7 +624,7 @@ body.transition-out {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  background: var(--primary);
+  background: var(--secondary);
   color: white;
   border: none;
   width: 50px;
@@ -1896,5 +1898,252 @@ body.transition-out {
 
   .faq-answer {
     font-size: 0.9rem;
+  }
+}
+/* DESIGNERS PAGE STYLES */
+.designers-page {
+  padding-bottom: 4rem;
+}
+
+.designers-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 28, 113, 0.9) 0%,
+    rgba(215, 109, 119, 0.8) 100%
+  );
+  color: white;
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+.designers-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.designers-hero .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.search-filter {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.filter-select {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  font-size: 1rem;
+}
+
+/* Designers Grid */
+.designers-grid-section {
+  padding: 3rem 0;
+}
+
+.designers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.designer-card {
+  background: var(--bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.designer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.designer-card-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.designer-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.designer-card:hover .designer-card-image img {
+  transform: scale(1.05);
+}
+
+.designer-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.designer-card-name {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.designer-card-brand {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.designer-card-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.designer-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #ffd700;
+}
+
+.designer-card-experience {
+  background: var(--bg-secondary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.designer-card-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.designer-card-btn:hover {
+  background: var(--secondary);
+}
+
+/* Designer Modal */
+.designer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: var(--bg);
+  border-radius: 12px;
+  overflow-y: auto;
+  z-index: 2;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .designers-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .search-filter {
+    flex-direction: column;
+  }
+
+  .designers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .designer-card-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .designers-hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .designers-grid {
+    grid-template-columns: 1fr;
   }
 }
