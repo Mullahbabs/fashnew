@@ -27,6 +27,7 @@
         </div>
         <nav class="nav">
           <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="index.html" class="nav-link">Collections</a></li>
             <li><a href="#" class="nav-link">Designers</a></li>
             <li><a href="#" class="nav-link">Tailors</a></li>
@@ -331,6 +332,26 @@
       </div>
     </div>
 
+    <div class="collection-modal" id="collectionModal">
+      <div class="collection-modal-overlay"></div>
+      <div class="collection-modal-container">
+        <button class="collection-modal-close">&times;</button>
+
+        <div class="collection-modal-header">
+          <h3 class="collection-modal-title">Urban Elegance Collection</h3>
+          <div class="collection-modal-nav">
+            <button class="collection-modal-prev">❮</button>
+            <span class="collection-modal-counter">1/6</span>
+            <button class="collection-modal-next">❯</button>
+          </div>
+        </div>
+
+        <div class="collection-modal-products">
+          <!-- Product cards will be injected here -->
+        </div>
+      </div>
+    </div>
+
     <footer class="vibrant-footer">
       <div class="footer-wave"></div>
 
@@ -440,6 +461,7 @@
     <script src="js/carousel.js"></script>
     <script src="js/cart-wishlist.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/collections.js"></script>
 
     <script>
       // Pause ticker on hover
@@ -479,41 +501,6 @@
                 collection.style.display = "none";
               }
             });
-        });
-      });
-
-      // View Button Animation
-      document.querySelectorAll(".collection-block").forEach((block) => {
-        block.addEventListener("mouseenter", () => {
-          block.querySelector(".view-btn").style.opacity = "1";
-          block.querySelector(".view-btn").style.transform = "translateY(0)";
-        });
-
-        block.addEventListener("mouseleave", () => {
-          block.querySelector(".view-btn").style.opacity = "0";
-          block.querySelector(".view-btn").style.transform = "translateY(10px)";
-        });
-
-        // Click handler for view button
-        block.querySelector(".view-btn").addEventListener("click", (e) => {
-          e.stopPropagation();
-          // Here you would normally navigate to the collection page
-          alert(
-            `Viewing ${block.querySelector(".collection-title").textContent}`
-          );
-        });
-      });
-
-      // Designer badge click handler
-      document.querySelectorAll(".designer-badge").forEach((badge) => {
-        badge.addEventListener("click", function (e) {
-          e.stopPropagation();
-          // Here you would navigate to the designer profile
-          alert(
-            `Viewing ${
-              this.querySelector(".designer-name").textContent
-            }'s profile`
-          );
         });
       });
     </script>
