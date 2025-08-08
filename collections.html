@@ -27,7 +27,7 @@
         </div>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
             <li>
               <a href="collections.html" class="nav-link active">Collections</a>
             </li>
@@ -471,11 +471,35 @@
       </div>
     </footer>
 
+    <!-- Wishlist Modal -->
+    <div class="wishlist-modal-container">
+      <div class="wishlist-modal-overlay"></div>
+      <div class="wishlist-modal-content">
+        <button class="close-wishlist-modal">&times;</button>
+        <h2>Your Wishlist</h2>
+        <div class="wishlist-items"></div>
+      </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal-container">
+      <div class="cart-modal-overlay"></div>
+      <div class="cart-modal-content">
+        <button class="close-cart-modal">&times;</button>
+        <h2>Your Cart</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+          <p>Total: $<span class="total-amount">0.00</span></p>
+          <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
     <script src="js/script.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/collections.js"></script>
     <script src="js/cart-wishlist.js"></script>
     <script src="js/modal.js"></script>
-    <script src="js/collections.js"></script>
 
     <script>
       // Pause ticker on hover

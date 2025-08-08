@@ -924,3 +924,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial binding
   bindCartAndWishlistEvents();
 });
+

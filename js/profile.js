@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Close modal when clicking outside content
   designerModal
-    .querySelector(".modal-overlay")
+    .querySelector(".modal1-overlay")
     .addEventListener("click", closeDesignerModal);
 
   // Initialize page
